@@ -13,7 +13,7 @@ logo = Image.open("BAFIRE-Patch.jpg")
 
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
-    st.image(logo, use_column_width=True)
+    st.image(logo, use_container_width=True)
 
 st.markdown("<h1 style='text-align: center; color: #B22222;'>Broken Arrow Fire Department</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center; color: #B22222;'>Internal Forms Hub</h3>", unsafe_allow_html=True)
