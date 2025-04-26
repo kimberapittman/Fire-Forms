@@ -18,7 +18,7 @@ st.markdown("<h1 style='text-align: center; color: #B22222;'>Broken Arrow Fire D
 st.markdown("<h3 style='text-align: center; color: #B22222;'>Internal Forms Hub</h3>", unsafe_allow_html=True)
 st.markdown("---")
 
-# --- Fire Forms ---
+# --- Fire Forms Dictionary ---
 fire_forms = {
     "Lexipol Feedback Form": "https://forms.office.com/Pages/ResponsePage.aspx?id=k3S3z1lJV0q1LEXuL7_5l_Y4fc7sB_ZBmjA4xbOC63NUNERSSjZVS01ZUEFPNEw0QzRHUEwxSUZYQy4u",
     "Add Pay Request Form": "https://forms.office.com/Pages/ResponsePage.aspx?id=k3S3z1lJV0q1LEXuL7_5l4OCiLz9x-VHidJzfg7Wn_lUMVJOVjZGUEE0UkkxTEI1U0JaTDZKWkVaUyQlQCN0PWcu",
@@ -29,6 +29,7 @@ fire_forms = {
     "Medical Facility Feedback Form": "https://forms.office.com/Pages/ResponsePage.aspx?id=k3S3z1lJV0q1LEXuL7_5l_Y4fc7sB_ZBmjA4xbOC63NUNE05NEsyVlFXRk9JQkZKTEZHUktIQUE1TS4u"
 }
 
+# --- Form Selection ---
 st.markdown("#### 🔽 Select a form from the dropdown:")
 selected_form = st.selectbox("Fire Forms", list(fire_forms.keys()))
 
@@ -39,12 +40,16 @@ if selected_form:
     st.markdown("---")
     st.markdown(f"<h4 style='color:#B22222;'>Embedded Form View:</h4>", unsafe_allow_html=True)
 
+    # --- Centered iframe Display ---
     st.markdown(
-        f'<iframe src="{form_url}" width="100%" height="700" style="border:2px solid #B22222; border-radius:10px;"></iframe>',
+        f"""
+        <div style='display: flex; justify-content: center;'>
+            <iframe src="{form_url}" width="80%" height="700" style="border:2px solid #B22222; border-radius:10px;"></iframe>
+        </div>
+        """,
         unsafe_allow_html=True
     )
 
 # --- Footer ---
 st.markdown("---")
 st.markdown("<p style='text-align: center; font-size: 12px;'>City of Broken Arrow | Fire Department | Est. 1906</p>", unsafe_allow_html=True)
-
